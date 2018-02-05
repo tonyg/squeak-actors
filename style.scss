@@ -60,10 +60,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-h1.main_heading {
-    margin-top: $top-padding;
-}
-
 ol, ul, p, pre, blockquote {
     margin-bottom: 1em;
 }
@@ -188,6 +184,10 @@ img {
 
 a {
     text-decoration: none;
+}
+
+em {
+    font-style: italic;
 }
 
 div.nextstep {
