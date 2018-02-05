@@ -20,3 +20,9 @@ author:
 
 links:
   squeaksource: 'http://www.squeaksource.com/Actors.html'
+  github: 'https://github.com/tonyg/squeak-actors'
+  documentation: 'http://tonyg.github.io/squeak-actors'
+
+squeak_updatenumber: 17738
+
+contact_email: 'tonyg@leastfixedpoint.com'
