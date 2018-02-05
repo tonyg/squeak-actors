@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>{{ page.title }} ({{ site.title }})</title>
+  <link rel="stylesheet" type="text/css" href="{{ site.production_url }}/reset.css">
+  <link rel="stylesheet" type="text/css" href="{{ site.production_url }}/style.css">
+  <link rel="stylesheet" type="text/css" href="{{ site.production_url }}/pygments-default.css">
+  <meta name="author" content="{{ site.author.fullname }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@{{ site.author.twitter }}">
+  <meta property="og:url" content="{{ site.production_url }}{{ page.url }}">
+  <meta property="og:title" content="{{ page.title }} ({{ site.title }})">{% if page.summary %}
+  <meta property="og:description" content="{{ page.summary }}">{% endif %}{% if page.summary_image %}
+  <meta property="og:image" content="{{ site.production_url }}{{ page.summary_image }}">{% endif %}
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+
+<body>
+ <div id="page">
+   <nav id="sidebar-outer">
+     <div id="sidebar">
+       <div id="homelink">
+         <h1><a href="{{ site.production_url }}/">{{ site.title }}</a><span id="nav-toggle"><i class="fas fa-bars"></i></span></h1>
+       </div>
+       {% assign sorted_pages = site.pages | where:"layout","page" | sort:"pageorder" %}
+       <ul id="nav">
+         {% for p in sorted_pages %}
+         <li{% if p == page %} class="active"{% endif %}>
+           <a href="{{ site.production_url }}{{ p.url }}">{{ p.sidebar_heading | default:p.title }}</a>
+           {% if p == page %}
+           {% include toc.html sanitize=true h_min=2 html=content %}
+           {% endif %}
+         </li>
+         {% endfor %}
+       </ul>
+       <script src="nav-toggle.js"></script>
+     </div>
+   </nav>
+
+   <div id="content">
+     {{ content }}
+   </div>
+ </div>
+</body>
+
+</html>
+

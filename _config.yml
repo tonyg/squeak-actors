@@ -1,0 +1,22 @@
+markdown: kramdown
+highlighter: pygments
+
+production_url: ''
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: page
+
+title: Squeak Actors
+
+author:
+  twitter: 'leastfixedpoint'
+  fullname: 'Tony Garnock-Jones'
+  gravatar: 'tonyg@leastfixedpoint.com'
+  email: 'tonyg@leastfixedpoint.com'
+
+links:
+  squeaksource: 'http://www.squeaksource.com/Actors.html'
