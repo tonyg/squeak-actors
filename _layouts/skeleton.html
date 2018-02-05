@@ -26,10 +26,11 @@
        <div id="homelink">
          <h1><a href="{{ site.production_url }}/">{{ site.title }}</a><span id="nav-toggle"><i class="fas fa-bars"></i></span></h1>
        </div>
-       {% assign sorted_pages = site.pages | where:"layout","page" | sort:"pageorder" %}
+       {% assign sorted_pages = site.pages | sort:"pageorder" %}
        {% assign current_group = null %}
        <ul id="nav">
          {% for p in sorted_pages %}
+         {% if p.pageorder %}
          {% if p.pagegroup != current_group %}{% if current_group %}</ul></li>{% endif %}
          {% assign current_group = p.pagegroup %}{% if current_group %}<li><span>{{ current_group }}</span><ul>{% endif %}{% endif %}
          <li{% if p == page %} class="active"{% endif %}>
@@ -38,6 +39,7 @@
            {% include toc.html sanitize=true h_min=2 html=content %}
            {% endif %}
          </li>
+         {% endif %}
          {% endfor %}
          {% if current_group %}</ul></li>{% endif %}
        </ul>
