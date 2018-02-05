@@ -118,11 +118,8 @@ ul {
             display: inline-block;
             width: 100%;
         }
-        li.active {
-            margin-bottom: 1em;
-            > a {
-                border-bottom: solid 1px white;
-            }
+        li.active > a {
+            border-bottom: solid 1px white;
         }
     }
 
