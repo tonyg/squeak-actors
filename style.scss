@@ -6,6 +6,7 @@ layout: none
 $body-fonts: 'Open Sans', 'Helvetica', sans-serif;
 $body-weight: 300;
 $header-weight: 400;
+$bold-weight: 600;
 
 @import url(//fonts.googleapis.com/css?family=Inconsolata);
 $code-fonts: 'Inconsolata', monospace;
@@ -15,6 +16,13 @@ $code-size: 0.85rem;
 $top-padding: 2.5rem;
 $sidebar-color: #004;
 $homelink-color: #428;
+
+@mixin note-like($background, $border) {
+    clear: both;
+    padding: 0.5em 1em;
+    border-left: solid $border 0.5em;
+    background: $background;
+}
 
 * {
     box-sizing: border-box;
@@ -45,6 +53,8 @@ h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
 h3 { font-size: 1.5rem; }
 h4 { font-size: 1.2rem; }
+
+h5 { display: inline; }
 
 h1, h2, h3, h4, h5, h6 {
     clear: both;
@@ -84,10 +94,16 @@ ul {
     #sidebar-outer { display: none; }
     div.nextstep { display: none; }
     h1.pagegroup_heading {
-        page-break-before: always;
         font-size: 2.5rem;
         border-bottom: solid black 0.066em;
     }
+    h1.pagegroup_heading.first_pagegroup {
+        margin-top: 0;
+    }
+    h1:not(.first_pagegroup) {
+        page-break-before: right;
+    }
+    h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
     h1 { font-size: 2rem; }
     h2 { font-size: 1.5rem; }
     h3 { font-size: 1.2rem; }
@@ -215,6 +231,10 @@ em {
     font-style: italic;
 }
 
+strong {
+    font-weight: $bold-weight;
+}
+
 div.nextstep {
     margin-top: 1em;
     margin-bottom: 0.5em;
@@ -227,10 +247,7 @@ div.nextstep + div.nextstep {
 }
 
 blockquote {
-    clear: both;
-    padding: 0.5em 1em;
-    border-left: solid #ddd 0.5em;
-    background: #eee;
+    @include note-like(#eee, #ddd);
 }
 blockquote > p:last-child {
     margin: 0;
@@ -264,11 +281,13 @@ sup > a::after { content: "]"; }
     > ol { padding-left: 0; }
 }
 
-.note {
-    clear: both;
-    padding: 0.5em 1em;
-    border-left: solid #ddf 0.5em;
-    background: #eef;
+.note { @include note-like(#eef, #ddf); }
+.warning { @include note-like(#fee, #fdd); }
+
+.implementation-note {
+    margin-left: 4rem;
+    font-size: 80%;
+    opacity: 0.5;
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -308,5 +327,6 @@ sup > a::after { content: "]"; }
 @media print {
     #sidebar-outer { display: none; }
     #page { display: block; }
+    #content { max-width: 100vw; }
     pre { white-space: pre-wrap; }
 }

@@ -1,23 +1,13 @@
 ---
-title: Feedback and Contributing
+title: About
 pageorder: 9999
 ---
 
+### Author
+
 ![Gravatar for Tony Garnock-Jones](https://gravatar.com/avatar/42b16d07d26467b3b1c06affe16413a2?d=mm&s=128){: class="floatleft inline"}
-Actors for Squeak was written by Tony Garnock-Jones.
-
-[Email me](mailto:{{ site.contact_email }}) at
-<{{site.contact_email}}> for bug reports or feature suggestions.
-Alternatively, start a discussion on
-[the squeak-dev mailing list](http://lists.squeakfoundation.org/cgi-bin/mailman/listinfo/squeak-dev).
-
-The source code is managed under the
-[Actors project]({{site.links.squeaksource}}) at
-[SqueakSource]({{site.links.squeaksource}}).
-
-The [documentation]({{ site.links.documentation }}) is managed as a
-[Jekyll](https://jekyllrb.com/)-based website at
-[this Github project]({{ site.links.github }}).
+Actors for Squeak was written by Tony Garnock-Jones,
+[`{{ site.contact_email }}`](mailto:{{ site.contact_email }}).
 
 ### License
 

@@ -1,5 +1,15 @@
 ---
 pageclass: singlepage
+layout: singlepage
+permalink: singlepage.html
+comment: >
+
+ OK, so there's a gross hack here. This file is called
+ "zzzzz_singlepage.html", but its permalink is overridden to
+ "singlepage.html". This makes it linkable as "singlepage.html" but
+ ensures it's processed LAST among all the pages in the site (unless
+ there's some page that has a name after the "zzzzz_" prefix!).
+
 ---
 
 {%
@@ -25,7 +35,7 @@ for p in sorted_pages %}{%
       endif %}{%
     endif %}
 <article>
-  <h1 class="main_heading">{{ p.main_heading | default:p.title }}</h1>
+  <h1 class="{% if p.url == '/' %}pagegroup_heading first_pagegroup{% else %}main_heading{% endif %}">{{ p.main_heading | default:p.title }}</h1>
   {{ p.content }}
 </article>{%
   endif %}{%
