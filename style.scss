@@ -282,3 +282,9 @@ sup > a::after { content: "]"; }
         display: inline-block;
     }
 }
+
+@media print {
+    #sidebar-outer { display: none; }
+    #page { display: block; }
+    #content { max-width: none; }
+}
