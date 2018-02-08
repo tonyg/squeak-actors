@@ -1,0 +1,33 @@
+---
+pageclass: singlepage
+---
+
+{%
+assign sorted_pages = site.pages | sort:"pageorder"
+%}{% assign current_group = null
+%}
+{%
+for p in sorted_pages %}{%
+  if p.pageorder %}{%
+    if p.pagegroup != current_group %}{%
+      assign current_group = p.pagegroup %}{%
+      if current_group %}{%
+        assign section_link = site.section_links[current_group]
+        %}{%
+        for p2 in site.pages %}{%
+          if section_link == p2.url %}
+<article>
+  <h1 class="pagegroup_heading">{{ p2.main_heading | default:p2.title }}</h1>
+  {{ p2.content }}
+</article>{%
+          endif %}{%
+        endfor %}{%
+      endif %}{%
+    endif %}
+<article>
+  <h1 class="main_heading">{{ p.main_heading | default:p.title }}</h1>
+  {{ p.content }}
+</article>{%
+  endif %}{%
+endfor
+%}
