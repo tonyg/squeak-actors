@@ -20,7 +20,7 @@
 </head>
 
 <body>
- <div id="page">
+ <div id="page"{% if page.pageclass %} class="{{ page.pageclass }}"{% endif %}>
    <nav id="sidebar-outer">
      <div id="sidebar">
        <div id="homelink">
@@ -39,7 +39,8 @@
                  assign section_link = site.section_links[current_group]
                  %}<li{% if section_link == page.url %} class="active"{% endif %}><a{%
                  if section_link %} href="{{ site.production_url }}{{ section_link }}"{% endif
-                 %}>{{ current_group }}</a><ul>{% endif %}{%
+                 %}>{{ current_group }}</a><ul>{%
+               endif %}{%
              endif %}
          <li{% if p.url == page.url %} class="active"{% endif %}>
            <a href="{{ site.production_url }}{{ p.url }}">{{ p.sidebar_heading | default:p.title }}</a>{%

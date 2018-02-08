@@ -243,10 +243,17 @@ sup > a::before { content: "["; }
 sup > a::after { content: "]"; }
 
 .footnotes {
-    border-top: solid black 1px;
-    margin-top: 0.618em;
+    margin-top: 1.618em;
     padding-top: 0.618em;
     font-size: 80%;
+    > ol { padding-left: 0; }
+}
+
+.note {
+    clear: both;
+    padding: 0.5em 1em;
+    border-left: solid #ddf 0.5em;
+    background: #eef;
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -286,5 +293,5 @@ sup > a::after { content: "]"; }
 @media print {
     #sidebar-outer { display: none; }
     #page { display: block; }
-    #content { max-width: none; }
+    pre { white-space: pre-wrap; }
 }
