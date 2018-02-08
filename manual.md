@@ -4,7 +4,8 @@ pagegroup: User Manual
 ---
 
 {: class="nonsinglepage note"}
-This documentation is available as a [single page for printing](singlepage.html).
+This documentation is available as a
+[single page for printing](singlepage.html).
 
 This library implements the Actor model for Smalltalk, drawing heavily
 on the design of [Erlang](https://www.erlang.org/) and its standard
