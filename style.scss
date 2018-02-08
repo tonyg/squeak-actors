@@ -92,6 +92,7 @@ ul {
     position: fixed;
     width: inherit;
     font-size: 0.85rem;
+    height: 100vh;
     max-height: 100vh;
 
     display: flex;
@@ -142,6 +143,11 @@ ul {
         margin: 1rem 0;
     }
 
+    p.copyright {
+        text-align: center;
+        font-size: 0.6rem;
+    }
+
     #nav {
         margin-top: 0.5rem;
         overflow-y: auto;
@@ -182,8 +188,12 @@ img {
 .floatright { float: right; margin-left: 1em; margin-bottom: 1em; }
 .clear { clear: both; }
 
-a {
-    text-decoration: none;
+a { text-decoration: none; }
+#content {
+    ol, ul, p, pre, blockquote {
+        a { text-decoration: underline rgba(0,0,255,0.3); }
+        a:visited { text-decoration: underline rgba(85,26,139,0.3); }
+    }
 }
 
 em {
@@ -221,6 +231,22 @@ blockquote > p:last-child {
     vertical-align: center;
     position: relative;
     top: -0.2em;
+}
+
+sup {
+    vertical-align: super;
+    font-size: 80%;
+}
+
+sup > a { text-decoration: none }
+sup > a::before { content: "["; }
+sup > a::after { content: "]"; }
+
+.footnotes {
+    border-top: solid black 1px;
+    margin-top: 0.618em;
+    padding-top: 0.618em;
+    font-size: 80%;
 }
 
 ///////////////////////////////////////////////////////////////////////////

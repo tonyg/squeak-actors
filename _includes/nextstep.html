@@ -1,6 +1,6 @@
 {% for p in site.pages %}{% if p.url == include.url %}
 <div class="nextstep">
   <a href="{{ site.production_url }}{{ p.url }}"><i class="fas fa-arrow-circle-right"></i>
-    {{ include.prefix | default:'Next step: ' }}{{ p.main_heading | default:p.title }}</a>
+    {{ include.prefix | default:'Next step: ' }}{{ include.suffix | default:p.main_heading | default:p.title }}</a>
 </div>
 {% endif %}{% endfor %}

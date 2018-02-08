@@ -3,6 +3,9 @@ title: Feedback and Contributing
 pageorder: 9999
 ---
 
+![Gravatar for Tony Garnock-Jones](https://gravatar.com/avatar/42b16d07d26467b3b1c06affe16413a2?d=mm&s=128){: class="floatleft inline"}
+Actors for Squeak was written by Tony Garnock-Jones.
+
 [Email me](mailto:{{ site.contact_email }}) at
 <{{site.contact_email}}> for bug reports or feature suggestions.
 Alternatively, start a discussion on
@@ -16,18 +19,12 @@ The [documentation]({{ site.links.documentation }}) is managed as a
 [Jekyll](https://jekyllrb.com/)-based website at
 [this Github project]({{ site.links.github }}).
 
-### Author
-
-![Gravatar for Tony Garnock-Jones](https://gravatar.com/avatar/42b16d07d26467b3b1c06affe16413a2?d=mm&s=128){: class="floatleft inline"}
-Actors for Squeak was written by Tony Garnock-Jones,
-<{{ site.contact_email }}>
-
 ### License
 
 Actors for Squeak is licensed under the
 [MIT license](http://opensource.org/licenses/MIT):
 
-> Copyright &copy; 2017–2018 Tony Garnock-Jones.
+> Copyright &copy; {{ site.copyrightyears }} Tony Garnock-Jones.
 >
 > Permission is hereby granted, free of charge, to any person
 > obtaining a copy of this software and associated documentation files

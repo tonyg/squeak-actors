@@ -9,7 +9,8 @@ The Smalltalk-80 concurrency model is, at heart, threads with mutable
 shared state plus locks, semaphores, mutexes and so on.
 
 {: class="clear"}
-This library adds an Erlang-style Actor model to Squeak.
+This library adds an [Erlang](https://www.erlang.org/)-style Actor
+model to Squeak.
 
 The following code snippet creates an actor, and invokes one of its
 methods via synchronous ([Promise](promises.html)-based) RPC:
@@ -22,7 +23,7 @@ h := HelloWorldActor spawn.
 
 {% include nextstep.html prefix='Get started: ' url='/installation.html' %}
 
-{% include nextstep.html prefix='Dive in: ' url='/tutorial-counter.html' %}
+{% include nextstep.html prefix='Dive in: ' url='/tutorials.html' %}
 
 ### Quickstart
 
@@ -38,4 +39,4 @@ h := HelloWorldActor spawn.
     - [Actor behaviors](behaviors.html) are plain old objects
     - Synchronous and asynchronous RPC to actors, using [promises](promises.html)
 
-{% include nextstep.html prefix='Read more: ' url='/design.html' %}
+{% include nextstep.html prefix='Read more: ' url='/manual.html' %}

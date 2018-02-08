@@ -1,6 +1,7 @@
 ---
 title: Design
-pageorder: 1002
+pagegroup: User Manual
+pageorder: 2000
 ---
 
 Weaknesses:

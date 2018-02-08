@@ -1,7 +1,7 @@
 ---
 title: Collections as behavior
 pagegroup: Tutorials
-pageorder: 3000
+pageorder: 3030
 ---
 
 ```smalltalk

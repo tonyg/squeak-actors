@@ -25,25 +25,33 @@
      <div id="sidebar">
        <div id="homelink">
          <h1><a href="{{ site.production_url }}/">{{ site.title }}</a><span id="nav-toggle"><i class="fas fa-bars"></i></span></h1>
-       </div>
-       {% assign sorted_pages = site.pages | sort:"pageorder" %}
-       {% assign current_group = null %}
-       <ul id="nav">
-         {% for p in sorted_pages %}
-         {% if p.pageorder %}
-         {% if p.pagegroup != current_group %}{% if current_group %}</ul></li>{% endif %}
-         {% assign current_group = p.pagegroup %}{% if current_group %}<li><span>{{ current_group }}</span><ul>{% endif %}{% endif %}
+       </div>{%
+       assign sorted_pages = site.pages | sort:"pageorder"
+       %}{% assign current_group = null
+       %}
+       <ul id="nav">{%
+         for p in sorted_pages %}{%
+           if p.pageorder %}{%
+             if p.pagegroup != current_group %}{%
+               if current_group %}</ul></li>{% endif %}{%
+               assign current_group = p.pagegroup %}{%
+               if current_group %}{%
+                 assign section_link = site.section_links[current_group]
+                 %}<li{% if section_link == page.url %} class="active"{% endif %}><a{%
+                 if section_link %} href="{{ site.production_url }}{{ section_link }}"{% endif
+                 %}>{{ current_group }}</a><ul>{% endif %}{%
+             endif %}
          <li{% if p.url == page.url %} class="active"{% endif %}>
-           <a href="{{ site.production_url }}{{ p.url }}">{{ p.sidebar_heading | default:p.title }}</a>
-           {% if p.url == page.url %}
-           {% include toc.html sanitize=true h_min=2 html=content %}
-           {% endif %}
-         </li>
-         {% endif %}
-         {% endfor %}
-         {% if current_group %}</ul></li>{% endif %}
+           <a href="{{ site.production_url }}{{ p.url }}">{{ p.sidebar_heading | default:p.title }}</a>{%
+           if p.url == page.url %}
+{% include toc.html sanitize=true h_min=2 html=content %}{% endif %}
+         </li>{%
+           endif %}{%
+         endfor %}{%
+         if current_group %}</ul></li>{% endif %}
        </ul>
        <script src="nav-toggle.js"></script>
+       <p class="copyright"><a href="{{ site.production_url }}/contact.html">© {{ site.copyrightyears }} Tony Garnock-Jones</a></p>
      </div>
    </nav>
 
@@ -54,4 +62,3 @@
 </body>
 
 </html>
-

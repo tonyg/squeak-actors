@@ -18,9 +18,9 @@ using the 6.0-alpha trunk series: that is, the bleeding edge.
 
 #### Download Squeak
 
-I downloaded
+Download
 [a recent 6.0-alpha trunk image and VM](http://files.squeak.org/6.0alpha/Squeak6.0alpha-17606-32bit/)
-for my platform.
+for your platform.
 
 #### Update Squeak
 
