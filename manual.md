@@ -22,9 +22,10 @@ Smalltalk object as its [Behavior](behaviors.html).
 
 Actors send each other messages via [Proxies](proxies.html). Messages
 may be [synchronous](synchronous-calls.html) (RPC) or
-[asynchronous](asynchronous-calls.html) (one-way). Synchronous calls
-can be made to block, or to return a [Promise](promises.html) of a
-future reply. [Exception handling](error-handling.html) and
+[asynchronous](asynchronous-calls.html) (one-way).
+[Request objects](requests.html) represent both cases. Synchronous
+calls can be made to block, or to return a [Promise](promises.html) of
+a future reply. [Exception handling](error-handling.html) and
 [timeouts and timers](time.html) are fully integrated.
 
 #### Links and Supervision

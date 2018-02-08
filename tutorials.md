@@ -3,9 +3,8 @@ title: Tutorials
 pagegroup: Tutorials
 ---
 
-The easiest way to learn the library is to try it out.
-
-There's no substitute for experimentation in a live image!
+The easiest way to learn the library is to try it out. There's no
+substitute for experimentation in a live image!
 
 The code snippets in these pages cannot be as interactive as the real
 thing. It can be difficult to get a feel for the system without
