@@ -16,8 +16,11 @@ delivered to the `Process` (the "promise").
 The sender is not always an `ActorProcess`. An ordinary `Process` can
 send `ActorRequests` and can wait for eventual replies or exceptions.
 
-If the sender is `nil`, the request is asynchronous and no-one cares
-about the reply to the eventual evaluation of the message.
+If the promise is `nil`, the request is asynchronous and no-one cares
+about the reply to the eventual evaluation of the message. However,
+even in this case, the *sender* is almost always non-nil: an
+asynchronous request can still usefully have a notion of "sender"
+associated with it.
 
 A request is not intrinsically targeted at any actor in particular; it
 does not store any information about the identity of its target.

@@ -19,3 +19,7 @@ appendEntry`, for example, assumes that the entry is to be found at
 
 Similarly, there's the back-and-forth dance between `changed:` and
 `update:` that one must remain painfully aware of.
+
+The main problem is that morphs and model objects must run in the UI
+process, because some of the interplay between morphs and their models
+is synchronous.
