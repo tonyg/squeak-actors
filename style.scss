@@ -305,6 +305,7 @@ sup > a::after { content: "]"; }
     }
     #sidebar {
         position: inherit;
+        height: inherit;
         #homelink {
             position: inherit;
             top: auto;
