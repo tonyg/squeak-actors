@@ -38,5 +38,6 @@ h := HelloWorldActor spawn.
  - Smalltalk-inspired extensions and conveniences
     - [Actor behaviors](behaviors.html) are plain old objects
     - Synchronous and asynchronous RPC to actors, using [promises](promises.html)
+    - rudimentary [Morphic GUI support](morphic.html)
 
 {% include nextstep.html prefix='Read more: ' url='/manual.html' %}
