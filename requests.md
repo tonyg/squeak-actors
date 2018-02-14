@@ -8,6 +8,8 @@ While any object can be sent as a user-level message between Actors,
 the convention is that instances of `ActorRequest` are the only kind
 of user-level message exchanged.
 
+### Class ActorRequest
+
 An `ActorRequest` (a "request") is a triple of a `Message` destined
 for a remote behavior (the "message"), a `Process` interested in the
 reply (the "sender"), and a `Promise` by which the reply is to be
@@ -16,20 +18,29 @@ delivered to the `Process` (the "promise").
 The sender is not always an `ActorProcess`. An ordinary `Process` can
 send `ActorRequests` and can wait for eventual replies or exceptions.
 
+A request is not intrinsically targeted at any actor in particular; it
+does not store any information about the identity of its target.
+
+### Asynchronous requests
+
 If the promise is `nil`, the request is asynchronous and no-one cares
 about the reply to the eventual evaluation of the message. However,
 even in this case, the *sender* is almost always non-nil: an
 asynchronous request can still usefully have a notion of "sender"
 associated with it.
 
-A request is not intrinsically targeted at any actor in particular; it
-does not store any information about the identity of its target.
+### Sending requests
 
 Requests can be sent to an actor with `ActorRequest >> #sendTo:` or
 the `#redirectTo:` family of methods. There are also convenience
 methods `Actor class >> #sendRequest:to:` and `sendAsyncRequest:to:`,
 and of course any instance of `ActorProxy` builds and sends
 `ActorRequest` instances.
+
+Once a request has been sent, its reply may be retrieved via the
+`Promise` it holds.
+
+### Sending replies or notifying of failures
 
 Ultimately, when a response is ready for a request, it is transmitted
 by invoking `ActorRequest >> #resolveWith:` or `#rejectWith:`, as

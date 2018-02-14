@@ -7,13 +7,13 @@ pageorder: 3010
 
 ```smalltalk
 ActorBehavior subclass: #HelloWorldActor
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Actors-Demos'
+              instanceVariableNames: ''
+              classVariableNames: ''
+              poolDictionaries: ''
+              category: 'Actors-Demos'
 
 greet: name
-	^ 'Hello, ', name, '!'
+    ^ 'Hello, ', name, '!'
 
 h := HelloWorldActor spawn.
 (h greet: 'Actor world') wait. "produces 'Hello, Actor world!'"

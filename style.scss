@@ -8,10 +8,10 @@ $body-weight: 300;
 $header-weight: 400;
 $bold-weight: 600;
 
-@import url(//fonts.googleapis.com/css?family=Inconsolata);
-$code-fonts: 'Inconsolata', monospace;
-$code-weight: 400;
-$code-size: 0.85rem;
+@import url(//fonts.googleapis.com/css?family=Roboto+Mono:300,400,700,600);
+$code-fonts: 'Roboto Mono', monospace;
+$code-weight: 300;
+$code-size: 0.85em;
 
 $top-padding: 2.5rem;
 $sidebar-color: #004;
@@ -22,6 +22,25 @@ $homelink-color: #428;
     padding: 0.5em 1em;
     border-left: solid $border 0.5em;
     background: $background;
+}
+
+@mixin fontawesome-icon($color, $content) {
+    content: $content;
+    font-family: 'FontAwesome';
+    color: $color;
+    float: left;
+    font-size: 2em;
+    margin-right: 0.4em;
+}
+
+@mixin code-like {
+    font-family: $code-fonts;
+    font-weight: $code-weight;
+    letter-spacing: -0.03em;
+}
+
+.white-space-pre {
+    white-space: pre;
 }
 
 * {
@@ -38,13 +57,13 @@ body {
     line-height: 1.6;
 }
 
-code, pre {
-    font-family: $code-fonts;
-    font-weight: $code-weight;
+code {
+    @include code-like;
     font-size: $code-size;
 }
 
 pre {
+    @include code-like;
     border: solid #eee 1px;
     padding: 0.618rem 1rem;
 }
@@ -280,6 +299,29 @@ sup > a::after { content: "]"; }
 
 .note { @include note-like(#eef, #ddf); }
 .warning { @include note-like(#fee, #fdd); }
+
+.incorrect pre {
+    border: solid #faa 1px;
+}
+.incorrect pre:before {
+    content: "EXAMPLE OF INCORRECT CODE";
+    color: #f44;
+    display: block;
+    font-size: $code-size;
+}
+
+.correct pre {
+    border: solid #4a4 1px;
+}
+.correct pre:before {
+    content: "EXAMPLE OF CORRECT CODE";
+    color: #0a0;
+    display: block;
+    font-size: $code-size;
+}
+
+// .note:before { @include fontawesome-icon(#aaf, ""); line-height: 0.8; }
+.warning:before { @include fontawesome-icon(#faa, ""); }
 
 .implementation-note {
     margin-left: 4rem;

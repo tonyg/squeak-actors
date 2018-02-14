@@ -66,6 +66,15 @@ is resolved in different ways depending on whether `async`, `sync`
 The reason the UI process is involved is that Squeak's
 delayed-execution mechanism itself always works via the UI process.
 
+{:. class="warning"}
+Because the delayed message send happens on the UI process, and
+promise resolution also happens on the UI process, execution of
+resolution/rejection handlers also happens on the UI process. Make
+sure to use `#bindActor` if a resolution handler needs to execute in a
+particular actor's context. See
+[here](promises.html#where-and-when-do-handlers-run) for more
+information.
+
 ### Waiting for a reply with a timeout
 
 Promises resulting from invoking a [request object](requests.html) are
@@ -73,15 +82,14 @@ in fact instances of `ActorPromise`, which augments the built-in
 Squeak `Promise` with a new method, `ActorPromise >> #waitFor:ifTimedOut:`.
 
 ```smalltalk
-anActorProxy someSlowRequest waitFor: 1000 ifTimedOut: [ aSentinelValue ]
+anActorProxy someSlowRequest waitFor: 1000 ifTimedOut: [ "..." ]
 ```
 
 Sending `someSlowRequest` to an `ActorProxy` starts the request
 process as usual, and the `#someSlowRequest` method starts running in
 the other actor. Meanwhile, the calling actor receives an
 `ActorPromise`, which is immediately sent `#waitFor:ifTimedOut:` with
-a timeout of 1,000ms and a timeout handler block that returns a
-sentinel value.
+a timeout of 1,000ms and a timeout handler block.
 
 The call to `ActorPromise >> #waitFor:ifTimedOut:` behaves differently
 depending on what happens. Its result will be
@@ -96,8 +104,7 @@ depending on what happens. Its result will be
    before any of the other two possibilities come to pass.
 
 The timeout handler block can take any action, including signalling an
-error, returning nil, returning a sentinel value, or returning any
-other useful value.
+error, returning nil, or returning any other useful value.
 
 The special case of a timeout handler block returning nil can be
 written `[]`:

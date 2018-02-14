@@ -14,7 +14,9 @@ The
 dates back to 1989, and was subsequently ported to Squeak. A version
 that can be loaded in to Squeak is still available on SqueakMap:
 
-    Installer squeakmap update; install: 'Actalk'
+```smalltalk
+Installer squeakmap update; install: 'Actalk'
+```
 
 The system is described in a paper:
 

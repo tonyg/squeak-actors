@@ -37,11 +37,16 @@ below for details.
 
 ```smalltalk
 ActorBehavior subclass: #SimpleTestActor
-	instanceVariableNames: '' classVariableNames: '' poolDictionaries: ''
-	category: 'Actors-Tests'.
+              instanceVariableNames: ''
+              classVariableNames: ''
+              poolDictionaries: ''
+              category: 'Actors-Tests'.
 
-a := SimpleTestActor spawn. "an ActorProxy for an Actor (92060) on a SimpleTestActor"
-a := Actor bootProxy: [ SimpleTestActor new ]. "Equivalent to the previous line"
+a := SimpleTestActor spawn.
+    "an ActorProxy for an Actor (92060) on a SimpleTestActor"
+
+a := Actor bootProxy: [ SimpleTestActor new ].
+    "Equivalent to the previous line"
 ```
 
 `Actor`s are created with `Actor class >> #boot:` and friends, or with
@@ -55,6 +60,9 @@ If `spawn` (or `Actor class >> #bootProxy:`) is used, the result is an
 of the RPC protocol that `Actor` instances expect. See the section on
 [proxies](proxies.html).
 
+[See below](#actor-and-actorprocess-constructors) for a complete list
+of available constructors.
+
 ### Sending requests
 
 Given an `ActorProxy` for an `Actor`, requests can be sent with
@@ -64,31 +72,33 @@ which has the following method on it:
 
 ```smalltalk
 SimpleTestActor >> addOneTo: aNumber
-	^ aNumber + 1
+    ^ aNumber + 1
 ```
 
 This allows us to send requests like this:
 
 ```smalltalk
-a addOneTo: 1. "a Promise"
+a addOneTo: 1.        "a Promise"
 (a addOneTo: 1) wait. "2"
 ```
 
-By default, requests will be [synchronous](synchronous-calls.html),
-yielding a [promise](promises.html) for the eventual result.
+By default, requests will be
+[synchronous](proxies.html#synchronous-rpc), yielding a
+[promise](promises.html) for the eventual result.
 
 The `ActorProxy` methods `async`, `sync` or `blocking` select
 alternative behaviors:
 
 ```smalltalk
-a async addOneTo: 1. "nil"
-a sync addOneTo: 1. "a Promise" "(like the default)"
+a async addOneTo: 1.    "nil"
+a sync addOneTo: 1.     "a Promise" "(like the default)"
 a blocking addOneTo: 1. "2"
 ```
 
 {:. class="note"}
-See the section on [synchronous calls](synchronous-calls.html) for
-more information on why and when you might want to use each of these
+See the section on
+[interaction patterns](proxies.html#interaction-patterns) for more
+information on why and when you might want to use each of these
 variations.
 
 Under the covers, a proxy builds an [`ActorRequest`](requests.html)
@@ -103,7 +113,7 @@ Given the following method:
 
 ```smalltalk
 SimpleTestActor >> divideOneBy: aNumber
-	^ 1 / aNumber
+    ^ 1 / aNumber
 ```
 
 The following request will cause `a` to crash:
@@ -112,16 +122,17 @@ The following request will cause `a` to crash:
 a divideOneBy: 0. "a Promise"
 ```
 
-The resulting promise will be rejected, with the `ZeroDivide`
-exception as an error value. All subsequent requests to the now-dead
-actor will also be rejected with the same exception instance. See the
-section on [error handling](error-handling.html) for more details.
+The resulting promise will be rejected, with an `ActorFailure` bearing
+the `ZeroDivide` exception as an error value. All subsequent requests
+to the now-dead actor will also be rejected with the same
+`ActorFailure` object. See the section on
+[error handling](error-handling.html) for more details.
 
 If the promise is waited for, a `BrokenPromise` exception will be
 signalled:
 
 ```smalltalk
-(a divideOneBy: 0) wait. "Signals BrokenPromise"
+(a divideOneBy: 0) wait.   "Signals BrokenPromise"
 a blocking divideOneBy: 0. "Signals BrokenPromise"
 ```
 
@@ -136,10 +147,10 @@ Behaviors must take care to distinguish between three important objects:
 
  - `Actor me` is an `ActorProxy` for the currently-executing `Actor`.
 
-It may freely invoke methods on `self`, but must take care when
-performing RPC using `ActorProxy >> #blocking` or `Promise >> #wait`,
-lest it deadlock: while an actor is blocked, waiting for a reply to an
-RPC request, it does not process incoming requests.
+A behavior may freely invoke methods on `self`, but must take care
+when performing RPC using `ActorProxy >> #blocking` or `Promise >>
+#wait`, lest it deadlock: while an actor is blocked, waiting for a
+reply to an RPC request, it does not process incoming requests.
 
 If a method on a behavior object returns `self`, the request that led
 to the method call is answered with `Actor me` in place of the
@@ -162,9 +173,9 @@ exception terminates the actor *abnormally* with the exception as its
 exit reason:
 
 ```smalltalk
-Actor current kill. "Terminates with a generic exception."
+Actor current kill.   "Terminates with a generic exception."
 self error: 'Oh no!'. "Any other exception will work."
-1 / 0. "Ordinary exceptions do the same kind of thing."
+1 / 0.                "Ordinary exceptions do the same kind of thing."
 ```
 
 Whenever an actor terminates for any reason, normally or abnormally,
@@ -232,7 +243,7 @@ currently-executing actor can be retrieved via `Actor class >> #me`.
 
 ```smalltalk
 Actor current. "an Actor (79217) on a SimpleTestActor"
-Actor me. "an ActorProxy for an Actor (79217) on a SimpleTestActor"
+Actor me.      "an ActorProxy for an Actor (79217) on a SimpleTestActor"
 ```
 
 ### System-level and user-level messages
@@ -272,6 +283,82 @@ method:
 External methods include `sendMessage:`, `kill`, `terminate`,
 `isActor` and so on. Internal methods include `receiveNext`,
 `receiveNextOrNil:`, and `receiveNextTimeout:`.
+
+## Actor and ActorProcess constructors
+
+There are many different ways to start an actor.
+
+### Behavior objects
+
+```smalltalk
+ActorBehavior spawn.
+ActorBehavior spawnLink.
+ActorBehavior spawnLinkName: aStringOrNil.
+ActorBehavior spawnName: aStringOrNil.
+```
+
+These constructors first instantiate their receiver (a subclass of
+`ActorBehavior`), and then pass the result to one of the `bootProxy:`
+variations on class `Actor`.
+
+### Actors with a behavior object
+
+```smalltalk
+Actor bootLinkProxy: aBlock.
+Actor bootLinkProxy: aBlock name: aStringOrNil.
+Actor bootProxy: aBlock.
+Actor bootProxy: aBlock name: aStringOrNil.
+```
+
+These constructors produce `Actor`s having the result of evaluating
+`aBlock` as their behavior object. The variations with `Link` in the
+name [link](links-and-monitors.html#links) the new actor to the
+calling process, and if a `name` is supplied, it is used when printing
+the actor and in the Squeak process browser.
+
+```smalltalk
+Actor for: anObject.
+Actor for: anObject link: aBoolean.
+```
+
+These constructors produce `Actor`s with `anObject` as their behavior
+object.
+
+### Erlang-style processes
+
+```smalltalk
+ActorProcess boot: aBlock.
+ActorProcess boot: aBlock link: aBoolean.
+ActorProcess boot: aBlock link: aBoolean name: aStringOrNil.
+ActorProcess boot: aBlock priority: anInteger link: aBoolean name: aStringOrNil.
+```
+
+These constructors produce actors running `aBlock` as their main
+routine. Generally speaking, `aBlock` will use `Actor receiveNext` to
+explicitly receive and handle incoming user-level messages.
+
+If `aBoolean` is absent or `false`, the new actor will not be
+[linked](links-and-monitors.html#links) by default to the calling
+process; if it is present and `true`, it will be linked to the calling
+process.
+
+If a name is supplied, it is used as the `Process` name, which is
+displayed in the Squeak process browser and anywhere that the
+`ActorProcess` is `print`ed.
+
+```smalltalk
+Actor boot: aBlock.
+Actor boot: aBlock link: aBoolean.
+Actor boot: aBlock link: aBoolean name: aStringOrNil.
+Actor boot: aBlock priority: anInteger link: aBoolean name: aStringOrNil.
+```
+
+Since `Actor` is a subclass of `ActorProcess`, it inherits these
+methods. However, it reinterprets the meaning of `aBlock`: instead of
+`aBlock` enacting the main routine of the new actor, it is expected to
+return a value that will be used as the behavior object of the new
+actor, and the standard `Actor` mainloop (`Actor >> #dispatchLoop`)
+will be used as the main routine.
 
 ## Weaknesses of the design
 
@@ -321,7 +408,7 @@ A similar case occurs in the following example:
 ```smalltalk
 d := Actor bootProxy: [ Dictionary new ].
 a async at: 1 put: 2.
-a blocking removeKey: 1. "This works fine..."
+a blocking removeKey: 1.  "This works fine..."
 a blocking removeKey: 99. "... but this kills the whole actor."
 ```
 
