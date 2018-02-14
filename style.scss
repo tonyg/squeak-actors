@@ -30,7 +30,8 @@ $homelink-color: #428;
     color: $color;
     float: left;
     font-size: 2em;
-    margin-right: 0.4em;
+    padding: 0;
+    margin-left: -1.5em;
 }
 
 @mixin code-like {
@@ -298,7 +299,7 @@ sup > a::after { content: "]"; }
 }
 
 .note { @include note-like(#eef, #ddf); }
-.warning { @include note-like(#fee, #fdd); }
+.warning { @include note-like(#fee, #fdd); min-height: 4em; padding-left: 4em; }
 
 .incorrect pre {
     border: solid #faa 1px;
