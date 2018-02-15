@@ -27,7 +27,9 @@ when it terminates because of an uncaught exception.
 The exit reason can take on many different values:
 
  - `nil` indicates "normal" termination.
- - An instance of `ActorFailure` indicates an uncaught exception.
+ - An `Exception` indicates an uncaught exception.
+ - An instance of `ActorTerminated` indicates termination caused by a
+   [linked](links-and-monitors.html#links) peer's termination.
  - Any other value can be supplied when explicitly terminating an actor.
 
 An actor can be terminated in three different ways:
@@ -38,15 +40,18 @@ An actor can be terminated in three different ways:
  - `ActorProcess >> #kill` simulates an uncaught a generic `Error`
    exception in the actor.
 
-### ActorFailure
+### ActorTerminated
 
-Instances of `ActorFailure` represent the cause of a chain of actor
-terminations propagating through links. An actor that signals an
-uncaught exception will be terminated with an `ActorFailure` as the
-exit reason, where the `actor` field is the original signalling actor,
-and the `exception` field is the original signalled exception.
+Instances of `ActorTerminated` represent a chain of actor terminations
+propagating through links. An actor that signals an uncaught exception
+will be terminated with the exception as its exit reason; actors
+linked to that will be terminated with an `ActorTerminated` as the
+exit reason, with its `actor` field the original signalling actor and
+its `exitReason` field the original signalled exception; and actors
+linked to *those* will be terminated with an exit reason that adds
+another `ActorTerminated` to the chain; and so on.
 
-As exit reasons propagate across
-[links and monitors](links-and-monitors.html), the use of
-`ActorFailure` rather than just the exception value alone allows the
-program or programmer to identify the actor that originally crashed.
+As exit reasons propagate across [links](links-and-monitors.html), the
+use of `ActorTerminated` rather than just the exception value alone
+allows the program or programmer to identify the actor that originally
+crashed.

@@ -122,10 +122,10 @@ The following request will cause `a` to crash:
 a divideOneBy: 0. "a Promise"
 ```
 
-The resulting promise will be rejected, with an `ActorFailure` bearing
-the `ZeroDivide` exception as an error value. All subsequent requests
-to the now-dead actor will also be rejected with the same
-`ActorFailure` object. See the section on
+The resulting promise will be rejected, with an `ActorTerminated`
+bearing the `ZeroDivide` exception as an error value. All subsequent
+requests to the now-dead actor will also be rejected with a similar
+`ActorTerminated` object. See the section on
 [error handling](error-handling.html) for more details.
 
 If the promise is waited for, a `BrokenPromise` exception will be

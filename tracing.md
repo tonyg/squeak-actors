@@ -70,7 +70,7 @@ each is the identity of the currently-active actor.
 
 In the following descriptions,
 
- - `aReason` is usually an `ActorFailure` or `nil`;
+ - `aReason` is usually an `Exception`, an `ActorTerminated`, or `nil`;
  - `aUserMessage` is usually an `ActorRequest`; and
  - `anActorish` is either an `ActorProcess` or an `ActorProxy`.
 
