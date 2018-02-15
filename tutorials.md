@@ -44,8 +44,3 @@ discussing the benefits, drawbacks and pitfalls of the idea.
 The [TCP/IP Hello World](tutorial-hello-server.html) tutorial covers
 programming with Actors representing TCP/IP connection sockets and
 listening TCP/IP server sockets.
-
-#### Morphic
-
-The [Morphic](tutorial-morphic.html) tutorial covers the essential
-elements of combining Morphic GUI programming with the Actor system.
