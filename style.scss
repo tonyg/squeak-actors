@@ -24,6 +24,10 @@ $homelink-color: #428;
     background: $background;
 }
 
+@mixin fontawesome-icon-sizing {
+    min-height: 4em;
+    padding-left: 4em;
+}
 @mixin fontawesome-icon($color, $content) {
     content: $content;
     font-family: 'FontAwesome';
@@ -299,7 +303,20 @@ sup > a::after { content: "]"; }
 }
 
 .note { @include note-like(#eef, #ddf); }
-.warning { @include note-like(#fee, #fdd); min-height: 4em; padding-left: 4em; }
+.warning { @include note-like(#fee, #fdd); @include fontawesome-icon-sizing; }
+.helpwanted { @include note-like(#efe, #afa); @include fontawesome-icon-sizing; }
+
+// .note:before { @include fontawesome-icon(#aaf, ""); line-height: 0.8; }
+.warning:before { @include fontawesome-icon(#faa, ""); }
+.helpwanted:before { @include fontawesome-icon(#8e8, ""); }
+
+.red { color: #f00; }
+
+.implementation-note {
+    margin-left: 4rem;
+    font-size: 80%;
+    opacity: 0.5;
+}
 
 .incorrect pre {
     border: solid #faa 1px;
@@ -319,15 +336,6 @@ sup > a::after { content: "]"; }
     color: #0a0;
     display: block;
     font-size: $code-size;
-}
-
-// .note:before { @include fontawesome-icon(#aaf, ""); line-height: 0.8; }
-.warning:before { @include fontawesome-icon(#faa, ""); }
-
-.implementation-note {
-    margin-left: 4rem;
-    font-size: 80%;
-    opacity: 0.5;
 }
 
 ///////////////////////////////////////////////////////////////////////////
