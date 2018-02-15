@@ -43,6 +43,10 @@ write has been delivered to the socket.
 See the [TCP/IP Hello World tutorial](tutorial-hello-server.html) for
 a full client-server example.
 
+{:. class="note"}
+In addition, class `DemoSocketTerminal` demonstrates combining Socket
+actors with actor-based [Morphic](morphic.html) programming.
+
 Here is a very simple example, a rough HTTP client that retrieves
 `http://localhost/`:
 
@@ -185,12 +189,6 @@ accepted from a server socket, the `tcpServer:accepted:` event takes
 the place of this event.
 
 ```smalltalk
-controllingActorProxy tcpSocketTimeout: socketActorProxy.
-```
-
-Issued when a connection attempt times out.
-
-```smalltalk
 controllingActorProxy tcpSocketClosed: socketActorProxy reason: anExceptionOrNil.
 ```
 
@@ -330,6 +328,19 @@ controllingActorProxy tcpSocket: socketActorProxy data: workUnit
 
 This event is delivered to the controlling actor whenever a unit of
 credit has been used up in receiving a work unit from the socket.
+
+#### Other events
+
+```smalltalk
+controllingActorProxy tcpSocketTimeout: socketActorProxy.
+```
+
+Issued when a connection attempt, an attempt to send data, or an
+attempt to read data times out.
+
+{:. class="implementation-note"}
+There is currently no way to set a read timeout implemented. Also,
+Squeak's send timeout appears to be hard-coded.
 
 #### Shutting down a connected socket
 
