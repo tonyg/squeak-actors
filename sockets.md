@@ -48,7 +48,11 @@ In addition, class `DemoSocketTerminal` demonstrates combining Socket
 actors with actor-based [Morphic](morphic.html) programming.
 
 Here is a very simple example, a rough HTTP client that retrieves
-`http://localhost/`:
+`http://localhost/`. After the headers have been read, the client
+switches from double-linefeed-separated [work units](#receiving-data)
+to raw chunks of data. At the moment of the change, the read credit
+amount is zero, ensuring that there is no risk of accidentally reading
+the wrong data in the wrong mode.
 
 ```smalltalk
 ActorProcess boot: [ | s |
@@ -246,6 +250,10 @@ send to the controlling actor. If the work unit separated is raw
 binary data, the credit value will just denote the number of chunks to
 be sent.
 
+{:. class="note"}
+The default work unit type is
+[`rawMode`](#arbitrary-chunk-work-units).
+
 ##### Delimiter-separated work units
 
 ```smalltalk
@@ -267,7 +275,7 @@ Delivered work unit items will be `ByteArray`s.
 ##### Arbitrary chunk work units
 
 ```smalltalk
-socketActorProxy rawMode.
+socketActorProxy rawMode. "Default at actor startup time."
 socketActorProxy rawModeAscii.
 ```
 
