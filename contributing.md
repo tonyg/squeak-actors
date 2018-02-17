@@ -17,5 +17,5 @@ The [documentation]({{ site.links.documentation }}) is managed as a
 [this Github project]({{ site.links.github }}).
 
 Actors for Squeak is licensed under the
-[MIT license](http://opensource.org/licenses/MIT); see the
+[MIT license](https://opensource.org/licenses/MIT); see the
 [about page](about.html) for details.

@@ -126,7 +126,7 @@ code executing at the remote actor.
 Use `>>=` and `bindActor` to attach a continuation to a returned
 promise. See [here](promises.html#adding-a-continuation-to-a-promise)
 for details of `>>=`, and
-[here](promises.html#where-and-when-to-handlers-run) for information
+[here](promises.html#where-and-when-do-handlers-run) for information
 on why `bindActor` is so important.
 
 #### Blocking RPC
