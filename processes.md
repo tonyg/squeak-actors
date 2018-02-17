@@ -194,6 +194,17 @@ Note that `kill` is a method on `Actor`, not a method on `p`'s
 behavior object. See the section on [proxies](proxies.html) for more
 information on the `actor` method of `ActorProxy`.
 
+### Cleaning up associated resources
+
+If an actor's behavior object responds to `postExitCleanup:`, that
+method is called after the actor has terminated. The argument passed
+to the method is the `exitReason` of the terminating actor.
+
+The method runs in a fresh, temporary process, not in the actor's own
+process. By the time of the call to `postExitCleanup:`, the actor's
+own process is guaranteed to have terminated. See `ActorProcess >>
+signalExit`.
+
 ## ActorProcess: Erlang-style processes
 
 Instances of `ActorProcess` implement a "process style" actor, in the
