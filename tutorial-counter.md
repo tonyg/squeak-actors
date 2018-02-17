@@ -173,3 +173,14 @@ Even the rejected call to `count` generates a Transcript message:
 ```
 2018-02-17 20:00:32 (54210) traceRejectedMessage: a synchronous ActorRequest from 54210 (count)
 ```
+
+If we synchronously wait for the result of a `Promise` resulting from
+a call to a terminated actor, a `BrokenPromise` exception will be
+signaled.
+
+```smalltalk
+a count wait.     "signals BrokenPromise"
+a blocking count. "signals BrokenPromise"
+```
+
+![BrokenPromise: Promise was rejected](img/BrokenPromise: Promise was rejected.png)
