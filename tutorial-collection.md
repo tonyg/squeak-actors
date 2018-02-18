@@ -143,4 +143,4 @@ avoid killing the whole actor, but at the cost of having the
 it will run in a context where `self` is the `Dictionary`, and `Actor
 current` and `Actor me` denote the actor that the client knows as `d`.
 
-{% include nextstep.html prefix='Next tutorial: ' url='/tutorial-hello-server.html' %}
+{% include nextstep.html prefix='Next tutorial: ' url='/tutorial-echo-server.html' %}

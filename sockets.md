@@ -40,7 +40,7 @@ write has been delivered to the socket.
 ### Example
 
 {: .note}
-See the [TCP/IP Hello World tutorial](tutorial-hello-server.html) for
+See the [TCP/IP Echo Server tutorial](tutorial-echo-server.html) for
 a full client-server example.
 
 {: .note}

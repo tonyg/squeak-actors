@@ -41,6 +41,6 @@ discussing the benefits, drawbacks and pitfalls of the idea.
 
 #### Client and Server TCP/IP Sockets
 
-The [TCP/IP Hello World](tutorial-hello-server.html) tutorial covers
+The [TCP/IP Echo Server](tutorial-echo-server.html) tutorial covers
 programming with Actors representing TCP/IP connection sockets and
 listening TCP/IP server sockets.
