@@ -17,7 +17,7 @@ Methods that go through `doesNotUnderstand:` etc. return
 Every `Actor` has exactly one `ActorProxy`, and every `ActorProxy` is
 associated with exactly one `Actor`.
 
-{:. class="implementation-note"}
+{: .implementation-note}
 Strictly speaking, `ActorProcess`es also have proxies: see the comment
 on `ActorProcess >> #proxy`.
 
@@ -72,7 +72,7 @@ myProxy blocking windowTitle.
 The three variants, `async`, `sync`, and `blocking` are discussed
 [below](#interaction-patterns).
 
-{:. class="warning"}
+{: .warning}
 Think twice before storing a `TransientActorProxy` instance in a
 variable!
 
@@ -84,10 +84,10 @@ why they should be considered "transient" or temporary.
 
 ### Interaction patterns
 
-![TransientActorProxy hierarchy](img/TransientActorProxy hierarchy.png){:
-class="floatright inline"} The three methods `async`, `sync` and
-`blocking` on an `ActorProxy` instance each return instances of a
-distinct subclass of `TransientActorProxy`.
+![TransientActorProxy hierarchy](img/TransientActorProxy hierarchy.png){: .floatright .inline}
+The three methods `async`, `sync` and `blocking` on an `ActorProxy`
+instance each return instances of a distinct subclass of
+`TransientActorProxy`.
 
 Each allows a distinct *interaction pattern*:
 
@@ -143,7 +143,7 @@ allocate an `ActorPromise`, but do not expose it: instead, they
 immediately wait for the promise to be resolved or rejected. These
 messages *eventually* either return a value or signal `BrokenPromise`.
 
-{:. class="implementation-note"}
+{: .implementation-note}
 
 There are circumstances where a `blocking` call will not return, such
 as when the callee ["detaches"](behaviors.html#suspending-the-caller),

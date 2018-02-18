@@ -9,7 +9,7 @@ pioneered an *application* of links called "supervisors".
 
  - [The Erlang/OTP documentation on supervisors](http://erlang.org/doc/man/supervisor.html)
 
-{:. class="warning"}
+{: .warning}
 Support for supervision is experimental.
 
 A supervisor is an actor which holds *specifications* describing the

@@ -3,7 +3,7 @@ title: User Manual
 pagegroup: User Manual
 ---
 
-{: class="nonsinglepage note"}
+{: .nonsinglepage .note}
 This documentation is available as a
 [single page for printing](singlepage.html).
 

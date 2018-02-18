@@ -4,18 +4,18 @@ title: Actors for Squeak Smalltalk
 pageorder: 0000
 ---
 
-![Smalltalk Balloon (by Bert Freudenberg)](img/balloon-only.svg){: width="72pt" class="floatleft inline"}
+![Smalltalk Balloon (by Bert Freudenberg)](img/balloon-only.svg){: width="72pt" .floatleft .inline}
 The Smalltalk-80 concurrency model is, at heart, threads with mutable
 shared state plus locks, semaphores, mutexes and so on.
 
-{: class="clear"}
+{: .clear}
 This library adds an [Erlang](https://www.erlang.org/)-style Actor
 model to Squeak.
 
 The following code snippet creates an actor, and invokes one of its
 methods via synchronous ([Promise](promises.html)-based) RPC:
 
-{: class="center"}
+{: .center}
 ```smalltalk
 h := HelloWorldActor spawn.
 (h greet: 'Actor world') wait. "produces 'Hello, Actor world!'"

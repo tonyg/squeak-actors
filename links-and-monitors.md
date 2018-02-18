@@ -78,7 +78,7 @@ and its [exit reason](error-handling.html#exit-reason), and the actor
 is not automatically terminated. The actor is still free to call
 `#terminate` or `#terminateWith:` when appropriate.
 
-{:. class="implementation-note"}
+{: .implementation-note}
 Note that Erlang treats "normal" exits specially. If an Erlang process
 exits with `normal` exit reason, *none of its links are activated*,
 and it exits without terminating linked peers. My
@@ -115,7 +115,7 @@ anActorProcess monitor: aReference.
 The calling actor will be informed when the receiver,
 `anActorProcess`, terminates.
 
-{:. class="warning"}
+{: .warning}
 Actors must use unique reference objects. Monitors are stored
 internally in a `Dictionary` keyed by reference object. If a
 particular reference object is passed to `monitor:` by two different

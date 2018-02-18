@@ -69,7 +69,7 @@ In this example, a continuation block `[:v | v + 1]` is attached to
 the promise returned by `#operationYieldingAPromise`—call it "promise
 A"—and a *new* promise, "promise B" is returned.
 
-{:. class="warning"}
+{: .warning}
 Make sure to use `bindActor` in conjunction with `>>=` if your
 continuation is supposed to run "inside" your actor.
 [See below.](#where-and-when-do-handlers-run)
@@ -89,7 +89,7 @@ of binary operators, allowing "stacking" of continuations:
   >>= [:v | v * 99]
 ```
 
-{:. class="implementation-note"}
+{: .implementation-note}
 The `>>=` operator is punningly, though inaccurately, named after the
 monadic bind operator seen in some functional programming languages.
 It's not quite a bind operator for the same reason that `then` isn't a
@@ -107,7 +107,7 @@ In an actor system, this is often not the right thing.
 
 For example, consider the following method on a behavior object:
 
-{:. class="incorrect"}
+{: .incorrect}
 ```smalltalk
 doSomethingWith: anActorProxy
     (anActorProxy compute)
@@ -130,14 +130,14 @@ of the actor that called `bindActor`.
 
 A correct version of the incorrect example above:
 
-{:. class="correct"}
+{: .correct}
 ```smalltalk
 doSomethingWith: anActorProxy
     (anActorProxy doSomething)
       >>= [:result | self pvtHandleResult: result] bindActor
 ```
 
-{:. class="implementation-note"}
+{: .implementation-note}
 Could we design a general mechanism that avoids this kind of problem?
 What about storing an optional `Process` along with each resolver and
 rejecter in a `Promise` instance? If a `Process` slot is non-`nil`,

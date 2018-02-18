@@ -66,7 +66,7 @@ is resolved in different ways depending on whether `async`, `sync`
 The reason the UI process is involved is that Squeak's
 delayed-execution mechanism itself always works via the UI process.
 
-{:. class="warning"}
+{: .warning}
 Because the delayed message send happens on the UI process, and
 promise resolution also happens on the UI process, execution of
 resolution/rejection handlers also happens on the UI process. Make

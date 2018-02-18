@@ -4,19 +4,18 @@ pagegroup: User Manual
 pageorder: 2000
 ---
 
-![ActorProcess hierarchy](img/ActorProcess hierarchy.png){:
-class="floatright inline"} Each Actor is a Smalltalk Process. There
-are two important subclasses of Process: `ActorProcess`, which
-implements a subset of the Erlang process model; and `Actor`, which
-goes a step further, adding a convention for using `Message` objects
-for RPC and using ordinary objects as actor
-[behaviors](behaviors.html).
+![ActorProcess hierarchy](img/ActorProcess hierarchy.png){: .floatright .inline}
+Each Actor is a Smalltalk Process. There are two important subclasses
+of Process: `ActorProcess`, which implements a subset of the Erlang
+process model; and `Actor`, which goes a step further, adding a
+convention for using `Message` objects for RPC and using ordinary
+objects as actor [behaviors](behaviors.html).
 
-{:. class="note"}
+{: .note}
 Most programs will use [`Actor`](#actor-concurrent-smalltalk-objects)
 rather than `ActorProcess`.
 
-{:. class="warning"}
+{: .warning}
 **No process isolation is implemented.** This is a big difference from
 languages like Erlang. All Smalltalk objects coexist in a single
 mutable shared heap. This means that it is very easy to accidentally
@@ -95,7 +94,7 @@ a sync addOneTo: 1.     "a Promise" "(like the default)"
 a blocking addOneTo: 1. "2"
 ```
 
-{:. class="note"}
+{: .note}
 See the section on
 [interaction patterns](proxies.html#interaction-patterns) for more
 information on why and when you might want to use each of these
@@ -223,7 +222,7 @@ They are more general than `Actor` instances, in that they do not
 enforce any particular convention for the user-level messages
 exchanged by the actor. However, they are awkward to use directly.
 
-{:. class="warning"}
+{: .warning}
 It is almost always better to use `Actor` with a custom
 `ActorBehavior` object instead of using `ActorProcess` directly.
 
@@ -273,7 +272,7 @@ User-level messages are the things sent by `ActorProcess >>
 sendMessage:` and received by `ActorProcess class >> #receiveNext`.
 They are a public aspect of working with Actors.
 
-{:. class="note"}
+{: .note}
 Programmers design their Actors in terms of the exchange of user-level
 messages, and never in terms of system-level messages.
 
@@ -431,7 +430,7 @@ denote the actor that the client knows as `d`. The tutorial on
 [collections as behavior](tutorial-collection.html) covers this topic
 in more detail.
 
-{:. class="implementation-note"}
+{: .implementation-note}
 Perhaps, in future, a special case for wrapping block arguments in an
 outer block that causes the block to execute in the correct Actor's
 context could be added.

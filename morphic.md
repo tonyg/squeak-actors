@@ -13,10 +13,10 @@ A `Morph` can be configured to use an
 information is needed from the model for UI display and interaction,
 requests are sent to an actor.
 
-{:. class="warning"}
+{: .warning}
 Morphic support is experimental.
 
-{:. class="helpwanted"}
+{: .helpwanted}
 I am a novice when it comes to Morphic programming. I am no doubt
 making incorrect assumptions about how it is supposed to work. I'd
 very much appreciate some help in improving the interaction between
@@ -49,7 +49,7 @@ actor as a model in two ways:
 
 #### Synchronous UI actions
 
-{:. class="warning"}
+{: .warning}
 It is quite easy to lock up the user interface while developing. The
 interrupt key (`Alt-.`) is helpful when this happens. However, don't
 rely on it: from time to time you will simply have to kill and restart
@@ -84,7 +84,7 @@ interrupting the UI process when a `halt` happens in a situation where
 it is likely that the UI process is waiting for the thing that has
 `halt`ed.
 
-{:. class="implementation-note"}
+{: .implementation-note}
 Perhaps (post-hoc: following the logic that exceptions traverse links)
 a `halt` should *halt all causally dependent processes as well*?
 Ultimately, new tooling will be needed to properly show the

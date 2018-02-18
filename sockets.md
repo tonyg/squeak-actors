@@ -8,7 +8,7 @@ Support for client (connecting) and server (listening) TCP/IP sockets
 is modeled on
 [Erlang's `gen_tcp`](http://erlang.org/doc/man/gen_tcp.html) library.
 
-{:. class="warning"}
+{: .warning}
 Socket support is experimental.
 
 Like Erlang, each connected socket is managed by a separate actor, and
@@ -39,11 +39,11 @@ write has been delivered to the socket.
 
 ### Example
 
-{:. class="note"}
+{: .note}
 See the [TCP/IP Hello World tutorial](tutorial-hello-server.html) for
 a full client-server example.
 
-{:. class="note"}
+{: .note}
 In addition, class `DemoSocketTerminal` demonstrates combining Socket
 actors with actor-based [Morphic](morphic.html) programming.
 
@@ -250,7 +250,7 @@ send to the controlling actor. If the work unit separated is raw
 binary data, the credit value will just denote the number of chunks to
 be sent.
 
-{:. class="note"}
+{: .note}
 The default work unit type is
 [`rawMode`](#arbitrary-chunk-work-units).
 
@@ -287,7 +287,7 @@ controlling actor.
 For `rawMode`, delivered work unit items will be `ByteArray`s; for
 `rawModeAscii`, they will be `String`s.
 
-{:. class="warning"}
+{: .warning}
 Using ASCII mode is almost always wrong.  
 &nbsp;  
 Strongly prefer to either use a delimiter-separated mode, which does
@@ -346,7 +346,7 @@ controllingActorProxy tcpSocketTimeout: socketActorProxy.
 Issued when a connection attempt, an attempt to send data, or an
 attempt to read data times out.
 
-{:. class="implementation-note"}
+{: .implementation-note}
 There is currently no way to set a read timeout implemented. Also,
 Squeak's send timeout appears to be hard-coded.
 
