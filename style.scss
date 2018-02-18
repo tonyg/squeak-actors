@@ -304,11 +304,13 @@ sup > a::after { content: "]"; }
 
 .note { @include note-like(#eef, #ddf); }
 .warning { @include note-like(#fee, #fdd); @include fontawesome-icon-sizing; }
-.helpwanted { @include note-like(#efe, #afa); @include fontawesome-icon-sizing; }
+.helpwanted { @include note-like(#ffe, #ffa); @include fontawesome-icon-sizing; }
+.tip { @include note-like(#efe, #afa); @include fontawesome-icon-sizing; }
 
 // .note:before { @include fontawesome-icon(#aaf, ""); line-height: 0.8; }
 .warning:before { @include fontawesome-icon(#faa, ""); }
-.helpwanted:before { @include fontawesome-icon(#8e8, ""); }
+.helpwanted:before { @include fontawesome-icon(#ee8, ""); }
+.tip:before { @include fontawesome-icon(#8e8, ""); }
 
 .red { color: #f00; }
 

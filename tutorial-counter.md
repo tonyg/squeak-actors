@@ -7,6 +7,9 @@ pageorder: 3010
 
 Our first example is a simple counter.
 
+{: .tip}
+While developing, it is useful to 
+
 ### Defining our behavior class
 
 ```smalltalk
