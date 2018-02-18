@@ -34,7 +34,7 @@ differences between Actalk and this system include:
  - we allow any object to be the behavior of an `Actor`
  - we offer links and monitors
 
-### Squeak-E
+### Squeak-E and Raven
 
 Research into [object capability systems](http://erights.org/) has led
 to a number of implementations of languages and libraries inspired by
@@ -72,7 +72,11 @@ Finally, E has special syntactic and language support for working with
 promises of various kinds, while Squeak and our library implement
 `Promise`s as an ordinary objects in the system.
 
-The Squeak-E implementation was not integrated with the core of
-Squeak, and does not seem to be available any more. I would welcome
-correction on this point! If anyone can point me to an installable
-Squeak-E, [please get in touch](mailto:{{ site.contact_email }}).
+The original Squeak-E implementation was not integrated with the core
+of Squeak, and does not seem to be available any more.
+
+However, in recent months, Henry House has been working on reviving
+the Squeak-E ideas, based on some of the original code, in a project
+called Raven, available as part of the
+[Cryptography](http://www.squeaksource.com/Cryptography.html) project
+on SqueakSource.
