@@ -11,6 +11,12 @@ thing. It can be difficult to get a feel for the system without
 hands-on experience. [Install the system](installation.html) to try it
 out.
 
+{: .implementation-note}
+If you prefer to load the completed tutorial classes, rather than
+building them yourself while following along with each tutorial, you
+can load the `ActorExamples` package from SqueakSource:  
+`(Installer squeaksource project: 'Actors') install: 'ActorExamples'`
+
 ### Examples and demos
 
 Besides the tutorial examples below, the library includes a handful of
