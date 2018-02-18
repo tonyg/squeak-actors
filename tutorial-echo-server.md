@@ -207,8 +207,8 @@ s := EchoServiceActor spawn.
 
 Now connect to the service on port 4096, perhaps using `nc` on the
 command line, or `telnet`, or the `EchoClientActor` developed below.
-You could also use the `DemoSocketTerminal` from the `Actors-Demos`
-package.
+You could also use the [`DemoSocketTerminal`](morphic.html#example)
+from the `Actors-Demos` package.
 
 When you've finished creating and destroying connections, terminate
 the listening actor:
@@ -227,7 +227,8 @@ For the client, we only need one class, representing a connected session.
 
 {: .tip}
 As well as using this client, you can also interact with the server
-using `DemoSocketTerminal` in the `Actors-Demos` package.
+using [`DemoSocketTerminal`](morphic.html#example) in the
+`Actors-Demos` package.
 
 ### EchoClientActor
 
