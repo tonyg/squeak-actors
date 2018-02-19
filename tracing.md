@@ -63,6 +63,10 @@ system wide, using
 ActorEventStreamTracer forStderr beDefault.
 ```
 
+{: .note}
+An example of the output of `ActorEventStreamTracer` can be seen in
+the ["counter" tutorial](tutorial-counter.html#tracing-activity).
+
 ### Trace events
 
 Tracer objects are called with the following messages. Implicit in
