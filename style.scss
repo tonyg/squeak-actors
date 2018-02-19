@@ -261,6 +261,9 @@ div.nextstep {
     margin-bottom: 0.5em;
     font-weight: $header-weight;
     font-size: 1.5rem;
+    .nextstep-arrow {
+        font-family: 'FontAwesome';
+    }
 }
 
 div.nextstep + div.nextstep {
@@ -284,6 +287,7 @@ blockquote > p:last-child {
     vertical-align: center;
     position: relative;
     top: -0.2em;
+    font-family: 'FontAwesome';
 }
 
 sup {

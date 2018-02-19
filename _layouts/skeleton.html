@@ -16,7 +16,7 @@
   <meta property="og:description" content="{{ page.summary }}">{% endif %}{% if page.summary_image %}
   <meta property="og:image" content="{{ site.production_url }}{{ page.summary_image }}">{% endif %}
 
-  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link href="{{ site.production_url }}/fonts-font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
    <nav id="sidebar-outer">
      <div id="sidebar">
        <div id="homelink">
-         <h1><a href="{{ site.production_url }}/">{{ site.title }}</a><span id="nav-toggle"><i class="fas fa-bars"></i></span></h1>
+         <h1><a href="{{ site.production_url }}/">{{ site.title }}</a><span id="nav-toggle"></span></h1>
        </div>{%
        assign sorted_pages = site.pages | sort:"pageorder"
        %}{% assign current_group = null
