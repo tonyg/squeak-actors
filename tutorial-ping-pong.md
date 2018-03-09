@@ -210,7 +210,7 @@ we link them to each other:
 actor1 linkTo: actor2.
 ```
 
-Now, if one does, so does the other.
+Now, if one dies, so does the other.
 
 Open a process browser, and check to see that both actors are there.
 Now, kill `actor1`.
