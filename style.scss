@@ -2,14 +2,14 @@
 layout: none
 ---
 
-@import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,700,600);
-$body-fonts: 'Open Sans', 'Helvetica', sans-serif;
+$body-fonts: Georgia, 'Times New Roman', Times, serif;
 $body-weight: 300;
-$header-weight: 400;
 $bold-weight: 600;
 
-@import url(//fonts.googleapis.com/css?family=Roboto+Mono:300,400,700,600);
-$code-fonts: 'Roboto Mono', monospace;
+$header-fonts: sans;
+$header-weight: 400;
+
+$code-fonts: monospace;
 $code-weight: 300;
 $code-size: 0.85em;
 
@@ -53,7 +53,7 @@ $homelink-color: #428;
 }
 
 html {
-    font-size: 1.3rem;
+    font-size: 16pt;
 }
 
 body {
@@ -84,6 +84,7 @@ h1, h2, h3, h4, h5, h6 {
     clear: both;
     margin-top: 1em;
     margin-bottom: 0.5em;
+    font-family: $header-fonts;
     font-weight: $header-weight;
     line-height: 1.2;
     + ol, + ul, + p, + pre, + blockquote {
