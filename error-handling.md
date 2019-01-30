@@ -37,7 +37,7 @@ An actor can be terminated in three different ways:
  - `Process >> #terminate` sets `exitReason` to be nil.
  - `ActorProcess >> #terminateWith:` sets `exitReason` to the argument
    of the message.
- - `ActorProcess >> #kill` simulates an uncaught a generic `Error`
+ - `ActorProcess >> #kill` simulates an uncaught generic `Error`
    exception in the actor.
 
 ### ActorTerminated
