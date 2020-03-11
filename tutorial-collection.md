@@ -29,7 +29,7 @@ a add: 4.
 If we explore our actor using "explore it" on `a` in our workspace, we
 see the state of the actor is as follows:
 
-![OrderedCollection actor 1](img/OrderedCollection actor 1.png)
+![OrderedCollection actor 1](<img/OrderedCollection actor 1.png>)
 
 As expected, we see `an OrderedCollection(3 4)` as the behavior
 object.
@@ -53,7 +53,7 @@ of the `OrderedCollection`.
 a size.
 ```
 
-![Instances of ActorProxy are not indexable](img/Instances of ActorProxy are not indexable.png)
+![Instances of ActorProxy are not indexable](<img/Instances of ActorProxy are not indexable.png>)
 
 What is happening here is that `ActorProxy` inherits from `Object`,
 which implements `size`. Instead of forwarding our request to the
@@ -85,7 +85,7 @@ a removeFirst wait. "4"
 a removeFirst wait. "(results in the following window)"
 ```
 
-![BrokenPromise: Promise was rejected](img/BrokenPromise: Promise was rejected.png)
+![BrokenPromise: Promise was rejected](<img/BrokenPromise: Promise was rejected.png>)
 
 Clicking on "Debug" allows us to find out what went wrong. In the
 lower-left panel on the debugger, when the topmost
@@ -93,7 +93,7 @@ lower-left panel on the debugger, when the topmost
 variable. Selecting that variable shows the underlying error in the
 adjacent panel:
 
-![BrokenPromise: Promise was rejected (detail, removeFirst)](img/BrokenPromise: Promise was rejected (detail, removeFirst).png)
+![BrokenPromise: Promise was rejected (detail, removeFirst)](<img/BrokenPromise: Promise was rejected (detail, removeFirst>).png)
 
 The main takeaway from this is that, since the behaviour object of the
 actor signaled an uncaught exception, **the entire actor has been

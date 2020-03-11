@@ -4,7 +4,7 @@ pagegroup: User Manual
 pageorder: 2000
 ---
 
-![ActorProcess hierarchy](img/ActorProcess hierarchy.png){: .floatright .inline}
+![ActorProcess hierarchy](<img/ActorProcess hierarchy.png>){: .floatright .inline}
 Each Actor is a Smalltalk Process. There are two important subclasses
 of Process: `ActorProcess`, which implements a subset of the Erlang
 process model; and `Actor`, which goes a step further, adding a

@@ -98,7 +98,7 @@ that can connect to an arbitrary host and port. Input from the server
 is displayed in the main panel, and input from the user is accepted in
 the lower input text field.
 
-![DemoSocketTerminal screenshot](img/DemoSocketTerminal.png)
+![DemoSocketTerminal screenshot](<img/DemoSocketTerminal.png>)
 
 The implementation of `DemoSocketTerminal` relies on a component
 called `TerminalOutputMorphActor`, which backs a `PluggableTextField`
@@ -106,7 +106,7 @@ with an actor. That actor in turn accepts `appendText:` messages. A
 `TerminalOutputMorphActor` is the implementation of the main panel in
 each `DemoSocketTerminal`.
 
-![DemoSocketTerminal structure](img/DemoSocketTerminal Structure Squeak Actors 20180217.png)
+![DemoSocketTerminal structure](<img/DemoSocketTerminal Structure Squeak Actors 20180217.png>)
 
 In the diagram above, on the left we see ordinary Morphic structure,
 with a `PluggableSystemWindow` having five submorphs. Four of those

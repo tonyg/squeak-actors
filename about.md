@@ -5,7 +5,7 @@ pageorder: 9999
 
 ### Author
 
-![Gravatar for Tony Garnock-Jones](https://gravatar.com/avatar/42b16d07d26467b3b1c06affe16413a2?d=mm&s=128){: .floatleft .inline}
+![Gravatar for Tony Garnock-Jones](<https://gravatar.com/avatar/42b16d07d26467b3b1c06affe16413a2?d=mm&s=128>){: .floatleft .inline}
 Actors for Squeak was written by Tony Garnock-Jones,
 [`{{ site.contact_email }}`](mailto:{{ site.contact_email }}).
 

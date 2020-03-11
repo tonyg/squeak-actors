@@ -33,7 +33,7 @@ MCMcmUpdater updateFromServer
 Alternatively, click the Squeak icon in the top left of the window,
 and choose "Update Squeak":
 
-![Squeak update menu item](img/squeak-update.png)
+![Squeak update menu item](<img/squeak-update.png>)
 
 As of this writing, my updated image is at update number {{ site.squeak_updatenumber }}. This
 includes all the `Kernel` changes necessary for supporting the

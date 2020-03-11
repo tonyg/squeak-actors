@@ -12,6 +12,6 @@ TestRunner open
 in a Workspace. Select the `Actors-Tests` package from the
 left-hand-side list, and click "Run Selected":
 
-![TestRunner on Actors-Tests](img/Test Runner in environment Smalltalk.png)
+![TestRunner on Actors-Tests](<img/Test Runner in environment Smalltalk.png>)
 
 {% include nextstep.html url='/tutorial-counter.html' %}

@@ -101,7 +101,7 @@ barrierWait` line a second time.
 
 Your screen should now look something like this:
 
-![Barrier World 1](img/Barrier World 1.png)
+![Barrier World 1](<img/Barrier World 1.png>)
 
 #### Exploring the state of the BarrierActor
 
@@ -113,7 +113,7 @@ If we "explore it" on `b` in our workspace, and drill down to see the
 behavior object, we can see the two requests sitting where they
 should:
 
-![BarrierActor Explorer](img/BarrierActor Explorer.png)
+![BarrierActor Explorer](<img/BarrierActor Explorer.png>)
 
 #### Releasing the waiters
 
@@ -132,7 +132,7 @@ time, to reopen it.
 
 After this, both explorer views on the promises should look like this:
 
-![Fulfilled barrierWait promise](img/Fulfilled barrierWait promise.png)
+![Fulfilled barrierWait promise](<img/Fulfilled barrierWait promise.png>)
 
 #### Cleaning up
 

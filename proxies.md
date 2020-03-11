@@ -84,7 +84,7 @@ why they should be considered "transient" or temporary.
 
 ### Interaction patterns
 
-![TransientActorProxy hierarchy](img/TransientActorProxy hierarchy.png){: .floatright .inline}
+![TransientActorProxy hierarchy](<img/TransientActorProxy hierarchy.png>){: .floatright .inline}
 The three methods `async`, `sync` and `blocking` on an `ActorProxy`
 instance each return instances of a distinct subclass of
 `TransientActorProxy`.

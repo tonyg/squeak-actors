@@ -85,7 +85,7 @@ actor1 increment: actor2 times: 5.
 
 You should see output like the following in your Transcript.
 
-![Transcript PingPong1](img/Transcript PingPong1.png)
+![Transcript PingPong1](<img/Transcript PingPong1.png>)
 
 Finally, terminate the two actors:
 
@@ -146,7 +146,7 @@ actor1 ping: actor2 times: 10.
 
 You should see output like the following in your Transcript.
 
-![Transcript PingPong2](img/Transcript PingPong2.png)
+![Transcript PingPong2](<img/Transcript PingPong2.png>)
 
 Finally, terminate the two actors:
 

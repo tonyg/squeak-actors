@@ -4,7 +4,7 @@ title: Actors for Squeak Smalltalk
 pageorder: 0000
 ---
 
-![Smalltalk Balloon (by Bert Freudenberg)](img/balloon-only.svg){: width="72pt" .floatleft .inline}
+![Smalltalk Balloon (by Bert Freudenberg)](<img/balloon-only.svg>){: width="72pt" .floatleft .inline}
 The Smalltalk-80 concurrency model is, at heart, threads with mutable
 shared state plus locks, semaphores, mutexes and so on.
 

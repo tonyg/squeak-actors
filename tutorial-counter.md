@@ -9,7 +9,7 @@ Our first example is a simple counter.
 
 {: .tip}
 While developing, it is useful to have open a Process Browser, so that you can see which actor processes are running, and manually terminate them if necessary.  
-![Process Browser](img/Process Browser.png)
+![Process Browser](<img/Process Browser.png>)
 &nbsp;  
 Open a process browser by choosing "open...", then "process browser"
 from the World menu. Don't forget to enable auto-updating by
@@ -192,6 +192,6 @@ a count wait.     "signals BrokenPromise"
 a blocking count. "signals BrokenPromise"
 ```
 
-![BrokenPromise: Promise was rejected](img/BrokenPromise: Promise was rejected.png)
+![BrokenPromise: Promise was rejected](<img/BrokenPromise: Promise was rejected.png>)
 
 {% include nextstep.html prefix='Next tutorial: ' url='/tutorial-ping-pong.html' %}
