@@ -4,7 +4,7 @@ pageorder: 1000
 ---
 
 To install the package, you will need a recent Squeak. I have been
-using the 6.0-alpha trunk series: that is, the bleeding edge.
+using the 6.1-alpha trunk series: that is, the bleeding edge.
 
 ### Quickstart
 
@@ -19,7 +19,7 @@ using the 6.0-alpha trunk series: that is, the bleeding edge.
 #### Download Squeak
 
 Download
-[a recent 6.0-alpha trunk image and VM](http://files.squeak.org/6.0alpha/Squeak6.0alpha-17606-32bit/)
+[a recent 6.1-alpha trunk image and VM](https://files.squeak.org/6.1alpha/Squeak6.1alpha-23331-64bit/)
 for your platform.
 
 #### Update Squeak

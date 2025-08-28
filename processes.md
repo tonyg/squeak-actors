@@ -127,12 +127,12 @@ requests to the now-dead actor will also be rejected with a similar
 `ActorTerminated` object. See the section on
 [error handling](error-handling.html) for more details.
 
-If the promise is waited for, a `BrokenPromise` exception will be
+If the promise is waited for, the `ActorTerminated` exception will be
 signalled:
 
 ```smalltalk
-(a divideOneBy: 0) wait.   "Signals BrokenPromise"
-a blocking divideOneBy: 0. "Signals BrokenPromise"
+(a divideOneBy: 0) wait.   "Signals ActorTerminated"
+a blocking divideOneBy: 0. "Signals ActorTerminated"
 ```
 
 ### Implementing a behavior

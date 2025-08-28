@@ -167,14 +167,14 @@ Transcript:
 ```
 
 And now our actor has become inert. Making requests of it will yield
-`BrokenPromise` exceptions:
+errors:
 
 ```smalltalk
 p := a count.
 p isKindOf: Promise. "true"
 p isResolved. "false"
 p isRejected. "true"
-p error. "an ActorTerminated for an Actor (82053) on a CounterActor (terminated) with Error: Killed"
+p errorValue. "ActorTerminated: Error: Killed (actor: an Actor (82053) on a CounterActor (terminated))"
 ```
 
 Even the rejected call to `count` generates a Transcript message:
@@ -184,14 +184,12 @@ Even the rejected call to `count` generates a Transcript message:
 ```
 
 If we synchronously wait for the result of a `Promise` resulting from
-a call to a terminated actor, a `BrokenPromise` exception will be
+a call to a terminated actor, an `ActorTerminated` exception will be
 signaled.
 
 ```smalltalk
-a count wait.     "signals BrokenPromise"
-a blocking count. "signals BrokenPromise"
+a count wait.     "signals ActorTerminated"
+a blocking count. "signals ActorTerminated"
 ```
-
-![BrokenPromise: Promise was rejected](<img/BrokenPromise: Promise was rejected.png>)
 
 {% include nextstep.html prefix='Next tutorial: ' url='/tutorial-ping-pong.html' %}

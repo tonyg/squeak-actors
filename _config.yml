@@ -23,11 +23,11 @@ links:
   github: 'https://github.com/tonyg/squeak-actors'
   documentation: 'https://tonyg.github.io/squeak-actors/'
 
-squeak_updatenumber: 17768
+squeak_updatenumber: 23336
 
 contact_email: 'tonyg@leastfixedpoint.com'
 
-copyrightyears: '2017–2018'
+copyrightyears: '2017–2025'
 
 section_links:
   'User Manual': '/manual.html'

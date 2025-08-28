@@ -151,7 +151,7 @@ few reasons:
  1. an `ActorProxy` returns `Promise`s for callback invocations, which
     Morphic is not expecting;
  2. a terminated `Actor` invoked via its `ActorProxy` yields `Promise`
-    rejections and signalled `BrokenPromise` exceptions, which Morphic
+    rejections and signalled `ActorTerminated` exceptions, which Morphic
     doesn't expect; and
  3. a `BlockingTransientActorProxy` waits forever for a reply, which
     can lead to UI deadlock.

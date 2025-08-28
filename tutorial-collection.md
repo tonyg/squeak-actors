@@ -85,15 +85,15 @@ a removeFirst wait. "4"
 a removeFirst wait. "(results in the following window)"
 ```
 
-![BrokenPromise: Promise was rejected](<img/BrokenPromise: Promise was rejected.png>)
+![ActorTerminated: Error: This collection is empty (actor: an Actor (52670) on an OrderedCollection() (terminated))](<img/ActorTerminated: Error: This collection is empty (actor: an Actor (52670) on an OrderedCollection() (terminated)).png>)
 
 Clicking on "Debug" allows us to find out what went wrong. In the
 lower-left panel on the debugger, when the topmost
-(`ActorPromise(Promise)>>wait`) context is selected, is an `error`
-variable. Selecting that variable shows the underlying error in the
-adjacent panel:
+(`ActorPromise(Promise)>>signalErrorValue`) context is selected, is an
+`errorValue` variable. Selecting that variable shows the underlying error
+in the adjacent panel:
 
-![BrokenPromise: Promise was rejected (detail, removeFirst)](<img/BrokenPromise: Promise was rejected (detail, removeFirst>).png)
+![ActorTerminated: Error: This collection is empty (actor: an Actor (52670) on an OrderedCollection() (terminated)) (debugger).png](<img/ActorTerminated: Error: This collection is empty (actor: an Actor (52670) on an OrderedCollection() (terminated)) (debugger).png>)
 
 The main takeaway from this is that, since the behaviour object of the
 actor signaled an uncaught exception, **the entire actor has been
@@ -132,7 +132,7 @@ otherwise an exception would be signalled:
 
 By using `Actor class >> #callerError:`, we avoid having an uncaught
 exception be thrown. Instead, only the promise associated with the
-request is rejected, causing a `BrokenPromise` exception in the
+request is rejected, causing an `Error` to be signalled in the
 caller, but leaving the `Dictionary` actor itself unharmed. Sending
 future requests to the dictionary actor will continue to work.
 
@@ -140,7 +140,7 @@ Our strategy of using methods like `at:ifAbsent:` instead of `at:`,
 and `removeKey:ifAbsent:` instead of `removeKey:`, has allowed us to
 avoid killing the whole actor, but at the cost of having the
 `ifAbsent:` block execute *in the wrong context*. That is, if it runs,
-it will run in a context where `self` is the `Dictionary`, and `Actor
+it will be called from a context where `self` is the `Dictionary`, and `Actor
 current` and `Actor me` denote the actor that the client knows as `d`.
 
 {% include nextstep.html prefix='Next tutorial: ' url='/tutorial-echo-server.html' %}

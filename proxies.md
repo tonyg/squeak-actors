@@ -141,7 +141,7 @@ The result of `ActorProxy >> #blocking` is a
 `BlockingTransientActorProxy`. Messages sent this way internally
 allocate an `ActorPromise`, but do not expose it: instead, they
 immediately wait for the promise to be resolved or rejected. These
-messages *eventually* either return a value or signal `BrokenPromise`.
+messages *eventually* either return a value or signal an error.
 
 {: .implementation-note}
 

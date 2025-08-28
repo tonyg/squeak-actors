@@ -35,8 +35,8 @@ value or error.
 
 If `p` is a `Promise` object, then
 
- - if `p isResolved`, then `p value` is its value; otherwise `p value` is `nil`.
- - if `p isRejected`, then `p error` is its error value; otherwise `p error` is `nil`.
+ - if `p isResolved`, then `p wait` (or, equivalently, `p value`) yields its value.
+ - if `p isRejected`, then `p errorValue` is its error value; otherwise `p errorValue` is `nil`.
  - if `p` is neither resolved nor rejected, then `p` is *pending*.
 
 ### Waiting for a promise to be resolved or rejected
@@ -45,16 +45,16 @@ Use `Promise >> #wait`, `Promise >> #waitTimeoutMSecs:`, and
 `ActorPromise >> #waitFor:ifTimedOut:` to block until a promise is
 either resolved or rejected.
 
- - `p wait` returns `p value` as soon as `p` is resolved, or signals
-   `BrokenPromise` if `p` is rejected.
+ - `p wait` returns `p`'s value as soon as `p` is resolved, or signals
+   the result of `p errorValue` if `p` is rejected.
 
  - `p waitTimeoutMSecs: ms` waits for at most `ms` milliseconds for
    `p` to become resolved or rejected. It returns `true` if `p` is
    resolved, and `false` if `p` is rejected or the timeout expires.
 
  - `p waitFor: ms ifTimedOut: aBlock` waits for at most `ms`
-   milliseconds for `p` to become resolved or rejected. It returns `p
-   value` if `p` is resolved, signals `BrokenPromise` if `p` is
+   milliseconds for `p` to become resolved or rejected. It returns `p`'s
+   value if `p` is resolved, signals `p errorValue` if `p` is
    rejected, or returns `aBlock value` if the timeout expires.
 
 ### Adding a continuation to a Promise

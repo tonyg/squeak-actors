@@ -97,7 +97,7 @@ depending on what happens. Its result will be
  - the result of `someSlowRequest`, if that method returns a value
    before the timeout fires;
 
- - a `BrokenPromise`, if the called actor terminates abnormally before
+ - a signalled error, if the called actor terminates abnormally before
    the timeout fires; or
 
  - the result of the timeout handler block, if the timeout fires
