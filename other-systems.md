@@ -75,7 +75,7 @@ promises of various kinds, while Squeak and our library implement
 The original Squeak-E implementation was not integrated with the core
 of Squeak, and does not seem to be available any more.
 
-However, in recent months, Henry House has been working on reviving
+However, in 2022, Henry House began an effort to revive
 the Squeak-E ideas, based on some of the original code, in a project
 called Raven, available as part of the
 [Cryptography](http://www.squeaksource.com/Cryptography.html) project
