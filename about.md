@@ -12,7 +12,7 @@ Actors for Squeak was written by Tony Garnock-Jones,
 ### License
 
 Actors for Squeak is licensed under the
-[MIT license](https://opensource.org/licenses/MIT):
+[MIT license](https://opensource.org/license/MIT):
 
 > Copyright &copy; {{ site.copyrightyears }} Tony Garnock-Jones.
 >

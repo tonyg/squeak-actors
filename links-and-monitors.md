@@ -21,9 +21,9 @@ linked or monitored actor includes the actor's exit reason value.
 
 More information on links and monitors in Erlang:
 
- - [The Erlang/OTP documentation on processes](http://erlang.org/doc/reference_manual/processes.html)
+ - [The Erlang/OTP documentation on processes](https://www.erlang.org/doc/system/ref_man_processes.html)
    discusses links and monitors
- - [Learn You Some Erlang](http://learnyousomeerlang.com/errors-and-processes) on errors and processes
+ - [Learn You Some Erlang](https://learnyousomeerlang.com/errors-and-processes) on errors and processes
 
 ## Links
 
@@ -68,7 +68,7 @@ group of actors "live and die together".[^fate-sharing]
 
     > *"The Design Philosophy of the DARPA Internet Protocols"*, David
     D. Clark, ACM SIGCOMM Computer Communication Review, 1988.
-    [ACM metadata.](https://dl.acm.org/citation.cfm?id=52336)
+    [ACM metadata.](https://dl.acm.org/doi/10.1145/52324.52336)
     [PDF.](http://ccr.sigcomm.org/archive/1995/jan95/ccr-9501-clark.pdf)
 
 The exception to the rule is for `Actor` instances that have behavior
@@ -82,8 +82,8 @@ is not automatically terminated. The actor is still free to call
 Note that Erlang treats "normal" exits specially. If an Erlang process
 exits with `normal` exit reason, *none of its links are activated*,
 and it exits without terminating linked peers. My
-[experience with Erlang programming](http://homepages.kcbbs.gen.nz/tonyg/projects/rabbitmq.html)
-has led me to believe that Erlang's default is perhaps not quite
+[experience with Erlang programming](https://leastfixedpoint.com/tonyg/kcbbs/projects/rabbitmq.html)
+Has led me to believe that Erlang's default is perhaps not quite
 right: when I link to something, I want there to be a consequence when
 it exits, no matter whether the exit is considered "normal" or not.
 Therefore, in this library, I have chosen *not* to special-case

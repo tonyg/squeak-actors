@@ -63,10 +63,10 @@ actor lifecycle events.
     > *"43 Years of Actors: a Taxonomy of Actor Models and Their Key
     Properties"*, Joeri De Koster, Tom Van Cutsem, and Wolfgang De
     Meuter, Proc. AGERE Workshop, 2016.
-    [ACM metadata.](https://dl.acm.org/citation.cfm?id=3001890)
+    [ACM metadata.](https://dl.acm.org/doi/10.1145/3001886.3001890)
     [Tech Report version (PDF).](http://soft.vub.ac.be/Publications/2016/vub-soft-tr-16-11.pdf)
 
     In addition, I have written an informal article on the
     [history of the Actor model](https://eighty-twenty.org/2016/10/18/actors-hopl).
 
-  [OTP]: http://erlang.org/doc/
+  [OTP]: https://erlang.org/doc/

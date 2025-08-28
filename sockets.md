@@ -6,7 +6,7 @@ pageorder: 2000
 
 Support for client (connecting) and server (listening) TCP/IP sockets
 is modeled on
-[Erlang's `gen_tcp`](http://erlang.org/doc/man/gen_tcp.html) library.
+[Erlang's `gen_tcp`](https://www.erlang.org/doc/apps/kernel/gen_tcp.html) library.
 
 {: .warning}
 Socket support is experimental.
@@ -27,10 +27,10 @@ write has been delivered to the socket.
     control" doesn't seem to be a term in common usage outside very
     narrow circles such as ATM-based networking. However, it is widely
     known in distributed systems folklore. One example of its use is
-    [in the RabbitMQ server internals](https://www.rabbitmq.com/blog/2015/10/06/new-credit-flow-settings-on-rabbitmq-3-5-5/)
+    [in the RabbitMQ server internals](https://www.rabbitmq.com/blog/2015/10/06/new-credit-flow-settings-on-rabbitmq-3-5-5)
     for managing flows of messages. A more in-depth look at the topic
     in the setting of ATM networking can be found in
-    [chapter 4](https://www.nap.edu/read/5769/chapter/4) of
+    [chapter 4](https://nap.nationalacademies.org/read/5769/chapter/4) of
 
     > "Traffic Management for High-Speed Networks: Fourth Lecture
     International Science Lecture Series", ed. H. T. Kung. The

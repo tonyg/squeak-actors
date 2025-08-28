@@ -266,7 +266,7 @@ things like links and monitors, and a specific type of system-level
 message carries user-level messages back and forth. See senders of
 `performInternally:` to discover the types and uses of system-level
 messages. System messages are comparable to (and inspired by)
-[Erlang's system messages](http://erlang.org/doc/design_principles/spec_proc.html#id80464).
+[Erlang's system messages](https://www.erlang.org/doc/system/spec_proc#msg).
 
 User-level messages are the things sent by `ActorProcess >>
 sendMessage:` and received by `ActorProcess class >> #receiveNext`.

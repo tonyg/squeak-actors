@@ -7,7 +7,7 @@ pageorder: 2000
 In addition to [links and monitors](links-and-monitors.html), Erlang
 pioneered an *application* of links called "supervisors".
 
- - [The Erlang/OTP documentation on supervisors](http://erlang.org/doc/man/supervisor.html)
+ - [The Erlang/OTP documentation on supervisors](https://www.erlang.org/doc/apps/stdlib/supervisor.html)
 
 {: .warning}
 Support for supervision is experimental.

@@ -22,9 +22,9 @@ The system is described in a paper:
 
 > "Actalk: a Testbed for Classifying and Designing Actor Languages in
 > the Smalltalk-80 Environment", Jean-Pierre Briot, Proc. ECOOP, 1989.
-> [Full ECOOP'89 conference proceedings.](http://www.lirmm.fr/~ducour/Doc-objets/ECOOP/tocs/tec89.htm)
-> [PDF (scan of proceedings).](http://www.lirmm.fr/~ducour/Doc-objets/ECOOP/papers/ec89/ec890109.pdf)
-> [PDF (alternate version).](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.41.2445&rep=rep1&type=pdf)
+> [Full ECOOP'89 conference proceedings.](https://web.archive.org/web/20200220134833/https://www.lirmm.fr/~ducour/Doc-objets/ECOOP/tocs/tec89.htm)
+> [PDF (scan of proceedings).](https://web.archive.org/web/20240423110810/https://www.lirmm.fr/~ducour/Doc-objets/ECOOP/papers/ec89/ec890109.pdf)
+> [PDF (alternate version).](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=26b1852b406c85ebf8e19039d641e59364b1537e)
 
 While I only have a shallow understanding of Actalk, it seems that
 differences between Actalk and this system include:
@@ -52,7 +52,7 @@ putting E concepts into Squeak".
 
 The design and goals of E and Squeak-E go far beyond the ambition of
 this library. In particular, Squeak-E aims to support a concept called
-[refraction](http://lists.squeakfoundation.org/pipermail/squeak-e/2003-February/000027.html)
+[refraction](https://lists.squeakfoundation.org/pipermail/squeak-e/2003-February/000027.html)
 which would not only allow secure actor-style interaction among
 parties that do not necessarily trust one another, but also secure
 reflection, management, monitoring, debugging and administration of
