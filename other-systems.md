@@ -36,18 +36,18 @@ differences between Actalk and this system include:
 
 ### Squeak-E and Raven
 
-Research into [object capability systems](http://erights.org/) has led
+Research into [object capability systems](https://web.archive.org/web/20250810152710/http://erights.org/) has led
 to a number of implementations of languages and libraries inspired by
 Mark Miller's E language:
 
 > "Robust Composition: Towards a Unified Approach to Access Control
 > and Concurrency Control", Mark Samuel Miller, PhD. dissertation,
 > Johns Hopkins University, 2006.
-> [Dissertation resource page.](http://www.erights.org/talks/thesis/)
-> [PDF.](http://www.erights.org/talks/thesis/markm-thesis.pdf)
+> [Dissertation resource page.](https://web.archive.org/web/20250815110403/http://www.erights.org/talks/thesis/)
+> [PDF.](https://web.archive.org/web/20250812085606/http://erights.org/talks/thesis/markm-thesis.pdf)
 
 In particular,
-[Squeak-E](http://www.erights.org/history/squeak-e.html) is "a project
+[Squeak-E](https://web.archive.org/web/20250103011740/http://www.erights.org/history/squeak-e.html) is "a project
 putting E concepts into Squeak".
 
 The design and goals of E and Squeak-E go far beyond the ambition of
